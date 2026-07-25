@@ -136,7 +136,6 @@ export function LandingFooter() {
 
         <div className="relative overflow-hidden pb-4">
           <div className="flex items-end gap-6 sm:gap-8">
-            <LandingLogoMark className="size-[clamp(4rem,12vw,10rem)]" />
             <span className="font-[family-name:var(--font-serif)] text-[clamp(6rem,22vw,16rem)] font-normal leading-[0.82] tracking-[-0.04em] text-white lowercase">
               {landingBrand.nameDisplay}
             </span>
