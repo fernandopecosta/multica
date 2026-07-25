@@ -46,8 +46,8 @@ export function LandingHeader({
       className={cn(
         "relative inset-x-0 top-0 z-30 border-b-2 border-[var(--landing-ink)] backdrop-blur-md",
         isDark
-          ? "absolute bg-[var(--landing-ink)]/80"
-          : "bg-[var(--landing-paper)]/95",
+          ? "absolute bg-transparent"
+          : "bg-transparent",
       )}
     >
       <div className="mx-auto flex h-[72px] max-w-[1320px] items-center justify-between px-4 sm:px-6 lg:px-8">
