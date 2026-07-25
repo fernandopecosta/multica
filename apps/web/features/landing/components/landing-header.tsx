@@ -146,7 +146,7 @@ function GitHubStarsBadge({ label }: { label: string }) {
 
 function navLinkClassName(variant: "dark" | "light") {
   return cn(
-    "inline-flex h-9 items-center rounded-lg px-3 text-[13px] font-semibold transition-colors",
+    "inline-flex h-9 items-center rounded-lg px-3 font-[family-name:var(--font-landing-sans)] text-[13px] font-medium transition-colors",
     variant === "dark"
       ? "text-white/85 hover:bg-white/10 hover:text-[var(--landing-coral)]"
       : "text-[var(--landing-ink)]/70 hover:bg-[var(--landing-sky)] hover:text-[var(--landing-blue)]",
@@ -155,6 +155,6 @@ function navLinkClassName(variant: "dark" | "light") {
 
 function mobileNavLinkClassName() {
   return cn(
-    "flex min-h-11 items-center gap-2 rounded-xl px-3 text-[14px] font-semibold transition-colors hover:bg-[var(--landing-sky)]",
+    "flex min-h-11 items-center gap-2 rounded-xl px-3 font-[family-name:var(--font-landing-sans)] text-[14px] font-medium transition-colors hover:bg-[var(--landing-sky)]",
   );
 }

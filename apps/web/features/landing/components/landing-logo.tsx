@@ -35,7 +35,7 @@ export function LandingLogo({
       {showWordmark ? (
         <span
           className={cn(
-            "text-[17px] font-extrabold lowercase tracking-[0.06em] sm:text-[18px]",
+            "font-[family-name:var(--font-landing-sans)] text-[17px] font-bold lowercase tracking-[0.04em] sm:text-[18px]",
             variant === "dark" ? "text-white" : "text-[var(--landing-ink)]",
             wordmarkClassName,
           )}

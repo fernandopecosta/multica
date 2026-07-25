@@ -1,15 +1,24 @@
 import { cn } from "@multica/ui/lib/utils";
 
+const display = "font-[family-name:var(--font-landing-display)]";
+const body = "font-[family-name:var(--font-landing-sans)]";
+
 /** Neo-brutalism landing tokens — modern blue palette + coral, mint, violet. */
 export const neo = {
-  label:
-    "text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--landing-coral)]",
-  heading:
-    "font-extrabold leading-[1.02] tracking-[-0.03em] text-[var(--landing-ink)]",
-  headingOnDark:
-    "font-extrabold leading-[1.02] tracking-[-0.03em] text-white",
-  body: "text-[15px] leading-7 text-[var(--landing-ink)]/75 sm:text-[16px]",
-  bodyOnDark: "text-[15px] leading-7 text-white/90 sm:text-[16px]",
+  label: cn(
+    body,
+    "text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--landing-coral)]",
+  ),
+  heading: cn(
+    display,
+    "text-[var(--landing-ink)] font-bold leading-[1.05] tracking-[-0.04em]",
+  ),
+  headingOnDark: cn(
+    display,
+    "font-bold leading-[1.05] tracking-[-0.04em] text-white",
+  ),
+  body: cn(body, "text-[15px] font-normal leading-7 text-[var(--landing-ink)]/75 sm:text-[16px]"),
+  bodyOnDark: cn(body, "text-[15px] font-normal leading-7 text-white/90 sm:text-[16px]"),
   border: "border-2 border-[var(--landing-ink)]",
   card: "rounded-2xl border-2 border-[var(--landing-ink)] bg-white",
   shadowBlue: "shadow-[4px_4px_0_0_var(--landing-blue)]",
@@ -29,8 +38,10 @@ export function neoButtonClassName(
   tone: NeoButtonTone,
   opts?: { onDark?: boolean },
 ) {
-  const base =
-    "inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[var(--landing-ink)] px-5 py-3 text-[13px] font-bold tracking-tight transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none";
+  const base = cn(
+    body,
+    "inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[var(--landing-ink)] px-5 py-3 text-[13px] font-semibold tracking-tight transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none",
+  );
 
   switch (tone) {
     case "coral":
