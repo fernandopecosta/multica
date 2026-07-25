@@ -14,7 +14,7 @@ import {
 import { useLocale, localeLabels } from "../i18n";
 import { landingBrand } from "../branding";
 import { useDashboardCtaHref } from "../utils/use-dashboard-cta";
-import { LandingLogo, LandingLogoMark } from "./landing-logo";
+import { LandingLogo } from "./landing-logo";
 
 export function LandingFooter() {
   const { t, locale, setLocale } = useLocale();
