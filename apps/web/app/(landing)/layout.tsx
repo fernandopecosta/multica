@@ -1,6 +1,7 @@
 import { Instrument_Serif, Noto_Serif_SC } from "next/font/google";
 import { LocaleProvider } from "@/features/landing/i18n";
 import { getRequestLocale } from "@/lib/request-locale";
+import { landingBrand } from "@/features/landing/branding";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -19,21 +20,20 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      name: "Multica",
-      url: "https://www.multica.ai",
-      sameAs: ["https://github.com/multica-ai/multica"],
+      name: landingBrand.name,
+      url: landingBrand.websiteUrl,
     },
     {
       "@type": "SoftwareApplication",
-      name: "Multica",
+      name: landingBrand.name,
       applicationCategory: "ProjectManagement",
       operatingSystem: "Web",
       description:
-        "Open-source project management platform that turns coding agents into real teammates.",
+        "Plataforma de gestão de projetos para equipes humanas e agentes de IA.",
       offers: {
         "@type": "Offer",
         price: "0",
-        priceCurrency: "USD",
+        priceCurrency: "BRL",
       },
     },
   ],

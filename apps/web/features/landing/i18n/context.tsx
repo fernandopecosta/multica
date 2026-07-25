@@ -14,6 +14,7 @@ import { createBrowserCookieLocaleAdapter } from "@multica/core/i18n/browser";
 import { createEnDict } from "./en";
 import { createJaDict } from "./ja";
 import { createKoDict } from "./ko";
+import { createPtDict } from "./pt";
 import { createZhDict } from "./zh";
 import {
   toLandingDictionaryLocale,
@@ -27,6 +28,7 @@ const dictionaryFactories: Record<
   (allowSignup: boolean) => LandingDict
 > = {
   en: createEnDict,
+  pt: createPtDict,
   ja: createJaDict,
   ko: createKoDict,
   zh: createZhDict,
@@ -42,7 +44,7 @@ const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 export function LocaleProvider({
   children,
-  initialLocale = "en",
+  initialLocale = "pt-BR",
 }: {
   children: React.ReactNode;
   initialLocale?: Locale;

@@ -65,26 +65,24 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.multica.ai"),
+  metadataBase: new URL("https://app.provincialabs.com.br"),
   title: {
-    default: "Multica — Project Management for Human + Agent Teams",
-    template: "%s | Multica",
+    default: "Província Labs — Gestão de Projetos para Equipes Humanas + Agentes",
+    template: "%s | Província Labs",
   },
   description:
-    "Open-source platform that turns coding agents into real teammates. Assign tasks, track progress, compound skills.",
+    "Plataforma interna da Província Labs para transformar agentes de código em colegas de equipe. Atribua tarefas, acompanhe progresso e gerencie skills.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: ["/favicon.svg"],
   },
   openGraph: {
     type: "website",
-    siteName: "Multica",
-    locale: "en_US",
+    siteName: "Província Labs",
+    locale: "pt_BR",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@multica_hq",
-    creator: "@multica_hq",
   },
   alternates: {
     canonical: "/",
@@ -101,6 +99,7 @@ export const metadata: Metadata = {
 // expects a region-flavoured tag for accessibility tooling and CJK fallback.
 const HTML_LANG: Record<SupportedLocale, string> = {
   en: "en",
+  "pt-BR": "pt-BR",
   "zh-Hans": "zh-CN",
   ko: "ko-KR",
   ja: "ja-JP",

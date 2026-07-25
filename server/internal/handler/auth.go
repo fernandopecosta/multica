@@ -46,6 +46,7 @@ const devVerificationCodeEnv = "MULTICA_DEV_VERIFICATION_CODE"
 // validation an arbitrary string would persist and echo to every device.
 var supportedLanguages = map[string]struct{}{
 	"en":      {},
+	"pt-BR":   {},
 	"zh-Hans": {},
 	"ko":      {},
 	"ja":      {},

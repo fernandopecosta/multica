@@ -5,6 +5,7 @@ import { useAuthStore } from "@multica/core/auth";
 import { docsHrefForLocale, useLocale } from "../i18n";
 import { useDashboardCtaHref } from "../utils/use-dashboard-cta";
 import { GitHubMark, githubUrl, heroButtonClassName } from "./shared";
+import { landingBrand } from "../branding";
 
 export function HowItWorksSection() {
   const { t, locale } = useLocale();
@@ -12,7 +13,11 @@ export function HowItWorksSection() {
   const ctaHref = useDashboardCtaHref();
 
   return (
-    <section id="how-it-works" className="bg-[#05070b] text-white">
+    <section
+      id="how-it-works"
+      className="text-white"
+      style={{ backgroundColor: landingBrand.colors.sectionDark }}
+    >
       <div className="mx-auto max-w-[1320px] px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
         <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/40">
           {t.howItWorks.label}
@@ -27,7 +32,8 @@ export function HowItWorksSection() {
           {t.howItWorks.steps.map((step, i) => (
             <div
               key={i}
-              className="flex flex-col bg-[#05070b] p-8 lg:p-10"
+              className="flex flex-col p-8 lg:p-10"
+              style={{ backgroundColor: landingBrand.colors.sectionDark }}
             >
               <span className="text-[13px] font-semibold tabular-nums text-white/28">
                 {String(i + 1).padStart(2, "0")}
@@ -52,15 +58,17 @@ export function HowItWorksSection() {
           >
             {t.howItWorks.ctaDocs}
           </Link>
-          <Link
-            href={githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className={heroButtonClassName("ghost")}
-          >
-            <GitHubMark className="size-4" />
-            {t.howItWorks.ctaGithub}
-          </Link>
+          {landingBrand.links.github ? (
+            <Link
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={heroButtonClassName("ghost")}
+            >
+              <GitHubMark className="size-4" />
+              {t.howItWorks.ctaGithub}
+            </Link>
+          ) : null}
         </div>
       </div>
     </section>

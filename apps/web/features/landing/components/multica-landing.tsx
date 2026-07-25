@@ -7,6 +7,7 @@ import { HowItWorksSection } from "./how-it-works-section";
 import { OpenSourceSection } from "./open-source-section";
 import { FAQSection } from "./faq-section";
 import { LandingFooter } from "./landing-footer";
+import { landingBrand } from "../branding";
 
 export function MulticaLanding() {
   return (
@@ -18,7 +19,7 @@ export function MulticaLanding() {
 
       <FeaturesSection />
       <HowItWorksSection />
-      <OpenSourceSection />
+      {landingBrand.showOpenSourceSection ? <OpenSourceSection /> : null}
       <FAQSection />
       <LandingFooter />
     </>

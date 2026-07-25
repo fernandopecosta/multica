@@ -1,8 +1,12 @@
 import { cn } from "@multica/ui/lib/utils";
+import { landingBrand } from "../branding";
 
-export const githubUrl = "https://github.com/multica-ai/multica";
-export const twitterUrl = "https://x.com/MulticaAI";
-export const discordUrl = "https://discord.gg/W8gYBn226t";
+export const githubUrl =
+  landingBrand.links.github ?? "https://github.com/multica-ai/multica";
+export const twitterUrl =
+  landingBrand.links.twitter ?? "https://x.com/MulticaAI";
+export const discordUrl =
+  landingBrand.links.discord ?? "https://discord.gg/W8gYBn226t";
 
 export function GitHubMark({ className }: { className?: string }) {
   return (

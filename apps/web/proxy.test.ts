@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { NextRequest } from "next/server";
+import { DEFAULT_LOCALE } from "@multica/core/i18n";
 import { MULTICA_LOCALE_HEADER } from "./lib/locale-routing";
 import { proxy } from "./proxy";
 
@@ -128,7 +129,7 @@ describe("proxy runtime upstream rewrites", () => {
       expect(res.headers.get("x-middleware-rewrite")).toBeNull();
       expect(
         res.headers.get(`x-middleware-request-${MULTICA_LOCALE_HEADER}`),
-      ).toBe("en");
+      ).toBe(DEFAULT_LOCALE);
     });
   });
 
@@ -140,7 +141,7 @@ describe("proxy runtime upstream rewrites", () => {
       expect(res.headers.get("x-middleware-rewrite")).toBeNull();
       expect(
         res.headers.get(`x-middleware-request-${MULTICA_LOCALE_HEADER}`),
-      ).toBe("en");
+      ).toBe(DEFAULT_LOCALE);
     });
   });
 
@@ -199,7 +200,7 @@ describe("proxy runtime upstream rewrites", () => {
       expect(res.headers.get("x-middleware-rewrite")).toBeNull();
       expect(
         res.headers.get(`x-middleware-request-${MULTICA_LOCALE_HEADER}`),
-      ).toBe("en");
+      ).toBe(DEFAULT_LOCALE);
     } finally {
       restoreEnv("REMOTE_API_URL", previous);
     }

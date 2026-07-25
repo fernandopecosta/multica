@@ -53,4 +53,14 @@ export const useCaseText: Record<SupportedLocale, UseCaseText> = {
     cardReadMore: "続きを読む →",
     tableOfContents: "このページの内容",
   },
+  "pt-BR": {
+    indexTitle: "Casos de uso",
+    indexSubtitle:
+      "Veja como equipes organizam pessoas e agentes com a Província Labs.",
+    indexMetadataTitle: "Casos de uso",
+    indexMetadataDescription:
+      "Veja como equipes colocam pessoas e agentes para trabalhar juntos.",
+    cardReadMore: "Ler →",
+    tableOfContents: "Nesta página",
+  },
 };

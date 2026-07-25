@@ -30,6 +30,7 @@ import { DesktopClientUsageReporter } from "./platform/client-usage-reporter";
 // (`html[lang|="ja"]`) can take effect.
 const HTML_LANG: Record<SupportedLocale, string> = {
   en: "en",
+  "pt-BR": "pt-BR",
   "zh-Hans": "zh-CN",
   ko: "ko-KR",
   ja: "ja-JP",

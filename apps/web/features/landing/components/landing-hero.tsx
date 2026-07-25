@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
 import { useAuthStore } from "@multica/core/auth";
 import { useLocale } from "../i18n";
+import { landingBrand } from "../branding";
 import { useDashboardCtaHref } from "../utils/use-dashboard-cta";
 import {
   ClaudeCodeLogo,
@@ -21,7 +22,10 @@ export function LandingHero() {
   const ctaHref = useDashboardCtaHref();
 
   return (
-    <div className="relative min-h-full overflow-hidden bg-[#05070b] text-white">
+    <div
+      className="relative min-h-full overflow-hidden text-white"
+      style={{ backgroundColor: landingBrand.colors.heroBg }}
+    >
       <LandingBackdrop />
 
       <main className="relative z-10">
@@ -44,53 +48,59 @@ export function LandingHero() {
               <Link href={ctaHref} className={heroButtonClassName("solid")}>
                 {user ? t.header.dashboard : t.hero.cta}
               </Link>
-              <Link
-                href="/download"
-                className={heroButtonClassName("ghost")}
-              >
-                <Download className="size-4" aria-hidden />
-                {t.hero.downloadDesktop}
-              </Link>
-              <Link
-                href="/contact-sales"
-                className="group inline-flex items-center justify-center gap-1.5 rounded-[12px] px-3 py-3 text-[14px] font-semibold text-white/80 transition-colors hover:text-white"
-              >
-                {t.hero.talkToSales}
-                <ArrowRight
-                  className="size-4 transition-transform group-hover:translate-x-0.5"
-                  aria-hidden
-                />
-              </Link>
+              {landingBrand.showDownloadDesktop ? (
+                <Link
+                  href="/download"
+                  className={heroButtonClassName("ghost")}
+                >
+                  <Download className="size-4" aria-hidden />
+                  {t.hero.downloadDesktop}
+                </Link>
+              ) : null}
+              {landingBrand.showTalkToSales ? (
+                <Link
+                  href="/contact-sales"
+                  className="group inline-flex items-center justify-center gap-1.5 rounded-[12px] px-3 py-3 text-[14px] font-semibold text-white/80 transition-colors hover:text-white"
+                >
+                  {t.hero.talkToSales}
+                  <ArrowRight
+                    className="size-4 transition-transform group-hover:translate-x-0.5"
+                    aria-hidden
+                  />
+                </Link>
+              ) : null}
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-            <span className="text-[15px] text-white/50">
-              {t.hero.worksWith}
-            </span>
-            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
-              <div className="flex items-center gap-2.5 text-white/80">
-                <ClaudeCodeLogo className="size-5" />
-                <span className="text-[15px] font-medium">Claude Code</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-white/80">
-                <CodexLogo className="size-5" />
-                <span className="text-[15px] font-medium">Codex</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-white/80">
-                <GeminiCliLogo className="size-5" />
-                <span className="text-[15px] font-medium">Gemini CLI</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-white/80">
-                <OpenClawLogo className="size-5" />
-                <span className="text-[15px] font-medium">OpenClaw</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-white/80">
-                <OpenCodeLogo className="size-5" />
-                <span className="text-[15px] font-medium">OpenCode</span>
+          {landingBrand.showAgentPartners ? (
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              <span className="text-[15px] text-white/50">
+                {t.hero.worksWith}
+              </span>
+              <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
+                <div className="flex items-center gap-2.5 text-white/80">
+                  <ClaudeCodeLogo className="size-5" />
+                  <span className="text-[15px] font-medium">Claude Code</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-white/80">
+                  <CodexLogo className="size-5" />
+                  <span className="text-[15px] font-medium">Codex</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-white/80">
+                  <GeminiCliLogo className="size-5" />
+                  <span className="text-[15px] font-medium">Gemini CLI</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-white/80">
+                  <OpenClawLogo className="size-5" />
+                  <span className="text-[15px] font-medium">OpenClaw</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-white/80">
+                  <OpenCodeLogo className="size-5" />
+                  <span className="text-[15px] font-medium">OpenCode</span>
+                </div>
               </div>
             </div>
-          </div>
+          ) : null}
 
           <div id="preview" className="mt-10 sm:mt-12">
             <ProductImage alt={t.hero.imageAlt} />
@@ -105,7 +115,7 @@ function LandingBackdrop() {
   return (
     <div className="pointer-events-none absolute inset-0">
       <Image
-        src="/images/landing-bg.jpg"
+        src={landingBrand.images.heroBackground}
         alt=""
         fill
         className="object-cover object-center"
@@ -119,7 +129,7 @@ function ProductImage({ alt }: { alt: string }) {
     <div>
       <div className="relative overflow-hidden border border-white/14">
         <Image
-          src="/images/landing-hero.png"
+          src={landingBrand.images.heroProduct}
           alt={alt}
           width={3532}
           height={2382}

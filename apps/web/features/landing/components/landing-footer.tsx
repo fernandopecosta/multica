@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { MulticaIcon } from "@multica/ui/components/common/multica-icon";
 import { cn } from "@multica/ui/lib/utils";
 import { useAuthStore } from "@multica/core/auth";
 import {
@@ -12,69 +11,76 @@ import {
   twitterUrl,
   discordUrl,
 } from "./shared";
-import { useLocale, locales, localeLabels } from "../i18n";
+import { useLocale, localeLabels } from "../i18n";
+import { landingBrand } from "../branding";
 import { useDashboardCtaHref } from "../utils/use-dashboard-cta";
+import { LandingLogo, LandingLogoMark } from "./landing-logo";
 
 export function LandingFooter() {
   const { t, locale, setLocale } = useLocale();
   const user = useAuthStore((s) => s.user);
   const ctaHref = useDashboardCtaHref();
   const groups = Object.values(t.footer.groups);
+  const visibleLocales = landingBrand.landingLocales;
 
   return (
-    <footer className="bg-[#0a0d12] text-white">
+    <footer
+      className="text-white"
+      style={{ backgroundColor: landingBrand.colors.footerBg }}
+    >
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
-        {/* Top: CTA + link columns */}
         <div className="flex flex-col gap-12 border-b border-white/10 py-16 sm:py-20 lg:flex-row lg:gap-20">
-          {/* Left — newsletter / CTA */}
           <div className="lg:w-[340px] lg:shrink-0">
             <Link href="#product" className="flex items-center gap-3">
-              <MulticaIcon className="size-5 text-white" noSpin />
-              <span className="text-[18px] font-semibold tracking-[0.04em] lowercase">
-                multica
-              </span>
+              <LandingLogo variant="dark" />
             </Link>
             <p className="mt-4 max-w-[300px] text-[14px] leading-[1.7] text-white/50 sm:text-[15px]">
               {t.footer.tagline}
             </p>
             <div className="mt-4 flex items-center gap-3">
-              <Link
-                href={twitterUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-white/40 transition-colors hover:text-white"
-              >
-                <XMark className="size-4" />
-              </Link>
-              <Link
-                href={githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-white/40 transition-colors hover:text-white"
-              >
-                <GitHubMark className="size-4" />
-              </Link>
-              <Link
-                href={discordUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Discord"
-                className="text-white/40 transition-colors hover:text-white"
-              >
-                <DiscordMark className="size-4" />
-              </Link>
+              {landingBrand.links.twitter ? (
+                <Link
+                  href={twitterUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white/40 transition-colors hover:text-white"
+                >
+                  <XMark className="size-4" />
+                </Link>
+              ) : null}
+              {landingBrand.links.github ? (
+                <Link
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white/40 transition-colors hover:text-white"
+                >
+                  <GitHubMark className="size-4" />
+                </Link>
+              ) : null}
+              {landingBrand.links.discord ? (
+                <Link
+                  href={discordUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Discord"
+                  className="text-white/40 transition-colors hover:text-white"
+                >
+                  <DiscordMark className="size-4" />
+                </Link>
+              ) : null}
             </div>
             <div className="mt-6">
               <Link
                 href={ctaHref}
-                className="inline-flex items-center justify-center rounded-[11px] bg-white px-5 py-2.5 text-[13px] font-semibold text-[#0a0d12] transition-colors hover:bg-white/88"
+                className="inline-flex items-center justify-center rounded-[11px] bg-white px-5 py-2.5 text-[13px] font-semibold transition-colors hover:bg-white/88"
+                style={{ color: landingBrand.colors.surface }}
               >
                 {user ? t.header.dashboard : t.footer.cta}
               </Link>
             </div>
           </div>
 
-          {/* Right — link columns */}
           <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-4">
             {groups.map((group) => (
               <div key={group.label}>
@@ -101,7 +107,6 @@ export function LandingFooter() {
           </div>
         </div>
 
-        {/* Bottom: copyright + language switcher */}
         <div className="flex items-center justify-between py-6">
           <p className="text-[13px] text-white/36">
             {t.footer.copyright.replace(
@@ -110,7 +115,7 @@ export function LandingFooter() {
             )}
           </p>
           <div className="flex items-center">
-            {locales.map((l, i) => (
+            {visibleLocales.map((l, i) => (
               <button
                 type="button"
                 key={l}
@@ -129,15 +134,11 @@ export function LandingFooter() {
           </div>
         </div>
 
-        {/* Giant logo */}
         <div className="relative overflow-hidden pb-4">
           <div className="flex items-end gap-6 sm:gap-8">
-            <MulticaIcon
-              className="size-[clamp(4rem,12vw,10rem)] shrink-0 text-white"
-              noSpin
-            />
+            <LandingLogoMark className="size-[clamp(4rem,12vw,10rem)]" />
             <span className="font-[family-name:var(--font-serif)] text-[clamp(6rem,22vw,16rem)] font-normal leading-[0.82] tracking-[-0.04em] text-white lowercase">
-              multica
+              {landingBrand.nameDisplay}
             </span>
           </div>
         </div>
