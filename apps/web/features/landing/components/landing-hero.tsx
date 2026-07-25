@@ -140,7 +140,6 @@ function LandingBackdrop() {
         priority
         className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[var(--landing-ink)]/55 via-[var(--landing-ink)]/35 to-[var(--landing-blue)]/75" />
     </div>
   );
 }
