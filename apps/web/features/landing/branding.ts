@@ -12,10 +12,16 @@ export const landingBrand = {
   },
 
   colors: {
-    heroBg: "#05070b",
-    footerBg: "#1a1030",
-    surface: "#0a0d12",
-    sectionDark: "#05070b",
+    heroBg: "#0A2463",
+    footerBg: "#0A2463",
+    surface: "#0A0A0A",
+    sectionDark: "#0A2463",
+    blue: "#0A2463",
+    blueLight: "#DBEAFE",
+    orange: "#FF6B00",
+    orangeDark: "#E85D04",
+    ink: "#0A0A0A",
+    paper: "#EEF2FF",
   },
 
   images: {
@@ -51,7 +57,6 @@ export const landingBrand = {
     },
   ] as const,
 
-  /** Locales shown in the landing footer language switcher. */
   landingLocales: ["pt-BR", "en"] as const,
 } as const;
 

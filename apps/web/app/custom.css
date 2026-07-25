@@ -16,6 +16,12 @@
     color-scheme: light;
 }
 .landing-light {
+    --landing-blue: #0a2463;
+    --landing-blue-light: #dbeafe;
+    --landing-orange: #ff6b00;
+    --landing-orange-dark: #e85d04;
+    --landing-ink: #0a0a0a;
+    --landing-paper: #eef2ff;
     --app-shell: oklch(0.964435 0.001327 286.375);
     --page-canvas: oklch(0.988087 0 0);
     --surface: oklch(1 0 0);
