@@ -2,7 +2,7 @@ export const landingBrand = {
   name: "Província Labs",
   nameDisplay: "província labs",
   tagline:
-    "Gestão de projetos para equipes humanas e agentes de IA. Plataforma interna da Província Labs.",
+    "Gestão de projetos para equipes humanas e agentes de IA. Fork do Multica utilizado internamente pela Província Labs.",
   websiteUrl: "https://provincialabs.com.br",
   metadataBase: "https://app.provincialabs.com.br",
 
