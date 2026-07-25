@@ -40,7 +40,7 @@ export function LandingFooter() {
         <div className="flex flex-col gap-12 border-b border-white/15 py-16 sm:py-20 lg:flex-row lg:gap-20">
           <div className="lg:w-[340px] lg:shrink-0">
             <Link href="#product" className="flex items-center gap-3">
-              <LandingLogo variant="dark" />
+              <LandingLogo variant="dark" size="footer" />
             </Link>
             <p className="mt-4 max-w-[300px] rounded-xl border-2 border-white/20 bg-white/10 px-4 py-3 text-[14px] leading-[1.7] text-white/85 sm:text-[15px]">
               {t.footer.tagline}
@@ -137,15 +137,12 @@ export function LandingFooter() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden border-t border-white/15 pb-6 pt-4">
-          <span
-            className={cn(
-              neo.headingOnDark,
-              "text-[clamp(3.5rem,16vw,12rem)] lowercase opacity-95",
-            )}
-          >
-            {landingBrand.nameDisplay}
-          </span>
+        <div className="relative overflow-hidden border-t border-white/15 pb-6 pt-6">
+          <LandingLogo
+            variant="dark"
+            size="footer"
+            className="mx-auto opacity-95 sm:mx-0"
+          />
         </div>
       </div>
     </footer>

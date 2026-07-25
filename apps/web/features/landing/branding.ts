@@ -7,7 +7,7 @@ export const landingBrand = {
   metadataBase: "https://app.provincialabs.com.br",
 
   logo: {
-    src: "/images/provincia-logo.svg",
+    src: "/images/provincia-labs-logo.png",
     alt: "Província Labs",
   },
 
