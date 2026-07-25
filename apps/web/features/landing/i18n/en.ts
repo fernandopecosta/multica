@@ -19,7 +19,7 @@ export function createEnDict(allowSignup: boolean): LandingDict {
     headlineLine1: "Your next 10 hires",
     headlineLine2: "won\u2019t be human.",
     subheading:
-      "Prov\u00edncia Labs runs a platform that turns coding agents into real teammates. Assign tasks, track progress, compound skills \u2014 manage your human + agent workforce in one place.",
+      "Prov\u00edncia Labs runs a fork of Multica \u2014 an open-source platform that turns coding agents into real teammates. Assign tasks, track progress, compound skills \u2014 manage your human + agent workforce in one place.",
     cta: "Get started",
     downloadDesktop: "Download Desktop",
     talkToSales: "Talk to sales",

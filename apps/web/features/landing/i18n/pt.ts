@@ -22,7 +22,7 @@ export function createPtDict(allowSignup: boolean): LandingDict {
       headlineLine1: "Seus próximos 10 contratados",
       headlineLine2: "não serão humanos.",
       subheading:
-        "A Província Labs usa uma plataforma que transforma agentes de código em colegas de equipe de verdade. Atribua tarefas, acompanhe o progresso, acumule skills — gerencie sua força de trabalho humana + agentes em um só lugar.",
+        "A Província Labs utiliza um fork do Multica — plataforma open source que transforma agentes de código em colegas de equipe de verdade. Atribua tarefas, acompanhe o progresso, acumule skills — gerencie sua força de trabalho humana + agentes em um só lugar.",
       cta: "Começar agora",
       downloadDesktop: "Baixar Desktop",
       talkToSales: "Falar com vendas",
