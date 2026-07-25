@@ -7,10 +7,10 @@ import { cn } from "@multica/ui/lib/utils";
 import { useAuthStore } from "@multica/core/auth";
 import { useLocale } from "../i18n";
 import { landingBrand } from "../branding";
-import { brutalist } from "../brutalist-styles";
+import { neo, neoButtonClassName } from "../brutalist-styles";
 import { useDashboardCtaHref } from "../utils/use-dashboard-cta";
 import { formatStarCount, useGithubStars } from "../utils/use-github-stars";
-import { GitHubMark, githubUrl, headerButtonClassName } from "./shared";
+import { GitHubMark, githubUrl } from "./shared";
 import { LandingLogo } from "./landing-logo";
 
 function navLabel(
@@ -44,8 +44,10 @@ export function LandingHeader({
   return (
     <header
       className={cn(
-        "relative inset-x-0 top-0 z-30 border-b-[3px] border-[var(--landing-ink)]",
-        isDark ? "absolute bg-[var(--landing-blue)]/95" : "bg-[var(--landing-paper)]",
+        "relative inset-x-0 top-0 z-30 border-b-2 border-[var(--landing-ink)] backdrop-blur-md",
+        isDark
+          ? "absolute bg-[var(--landing-ink)]/80"
+          : "bg-[var(--landing-paper)]/95",
       )}
     >
       <div className="mx-auto flex h-[72px] max-w-[1320px] items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -76,7 +78,10 @@ export function LandingHeader({
             aria-label={isMenuOpen ? t.header.closeMenu : t.header.openMenu}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((open) => !open)}
-            className={cn(headerButtonClassName("ghost", variant), "px-3 md:hidden")}
+            className={cn(
+              neoButtonClassName(isDark ? "ghostOnDark" : "ghost"),
+              "px-3 md:hidden",
+            )}
           >
             {isMenuOpen ? (
               <X className="size-4" aria-hidden />
@@ -90,7 +95,7 @@ export function LandingHeader({
               target="_blank"
               rel="noreferrer"
               className={cn(
-                headerButtonClassName("ghost", variant),
+                neoButtonClassName(isDark ? "ghostOnDark" : "ghost"),
                 "hidden lg:inline-flex",
               )}
             >
@@ -99,10 +104,7 @@ export function LandingHeader({
               {starsLabel ? <GitHubStarsBadge label={starsLabel} /> : null}
             </Link>
           ) : null}
-          <Link
-            href={ctaHref}
-            className={headerButtonClassName("solid", variant)}
-          >
+          <Link href={ctaHref} className={neoButtonClassName("coral")}>
             {ctaLabel}
           </Link>
         </div>
@@ -111,8 +113,8 @@ export function LandingHeader({
       {isMenuOpen ? (
         <div
           className={cn(
-            "absolute left-4 right-4 top-[calc(100%+8px)] z-50 border-[3px] border-[var(--landing-ink)] bg-[var(--landing-blue)] p-2 text-white md:hidden",
-            brutalist.shadow,
+            "absolute left-4 right-4 top-[calc(100%+8px)] z-50 rounded-2xl border-2 border-[var(--landing-ink)] bg-white p-2 text-[var(--landing-ink)] md:hidden",
+            neo.shadowBlue,
           )}
         >
           <nav aria-label={t.header.navigation} className="flex flex-col">
@@ -121,7 +123,7 @@ export function LandingHeader({
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={mobileNavLinkClassName(variant)}
+                className={mobileNavLinkClassName()}
               >
                 {link.label}
               </Link>
@@ -144,18 +146,15 @@ function GitHubStarsBadge({ label }: { label: string }) {
 
 function navLinkClassName(variant: "dark" | "light") {
   return cn(
-    "inline-flex h-9 items-center px-3 text-[12px] font-black uppercase tracking-[0.1em] transition-colors",
+    "inline-flex h-9 items-center rounded-lg px-3 text-[13px] font-semibold transition-colors",
     variant === "dark"
-      ? "text-white/80 hover:text-[var(--landing-orange)]"
-      : "text-[var(--landing-ink)]/70 hover:text-[var(--landing-blue)]",
+      ? "text-white/85 hover:bg-white/10 hover:text-[var(--landing-coral)]"
+      : "text-[var(--landing-ink)]/70 hover:bg-[var(--landing-sky)] hover:text-[var(--landing-blue)]",
   );
 }
 
-function mobileNavLinkClassName(variant: "dark" | "light") {
+function mobileNavLinkClassName() {
   return cn(
-    "flex min-h-11 items-center gap-2 px-3 text-[13px] font-black uppercase tracking-[0.08em] transition-colors",
-    variant === "dark"
-      ? "text-white/90 hover:bg-white/10"
-      : "text-[var(--landing-ink)] hover:bg-[var(--landing-blue-light)]",
+    "flex min-h-11 items-center gap-2 rounded-xl px-3 text-[14px] font-semibold transition-colors hover:bg-[var(--landing-sky)]",
   );
 }

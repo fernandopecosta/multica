@@ -16,12 +16,17 @@
     color-scheme: light;
 }
 .landing-light {
-    --landing-blue: #0a2463;
-    --landing-blue-light: #dbeafe;
-    --landing-orange: #ff6b00;
-    --landing-orange-dark: #e85d04;
-    --landing-ink: #0a0a0a;
-    --landing-paper: #eef2ff;
+    --landing-blue: #2563eb;
+    --landing-blue-dark: #1d4ed8;
+    --landing-sky: #e0f2fe;
+    --landing-coral: #fb7185;
+    --landing-coral-dark: #f43f5e;
+    --landing-mint: #2dd4bf;
+    --landing-mint-soft: #ccfbf1;
+    --landing-violet: #8b5cf6;
+    --landing-violet-soft: #ede9fe;
+    --landing-ink: #0f172a;
+    --landing-paper: #f8fafc;
     --app-shell: oklch(0.964435 0.001327 286.375);
     --page-canvas: oklch(0.988087 0 0);
     --surface: oklch(1 0 0);

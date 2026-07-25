@@ -7,7 +7,7 @@ import { cn } from "@multica/ui/lib/utils";
 import { useAuthStore } from "@multica/core/auth";
 import { useLocale } from "../i18n";
 import { landingBrand } from "../branding";
-import { brutalist } from "../brutalist-styles";
+import { neo, neoButtonClassName } from "../brutalist-styles";
 import { useDashboardCtaHref } from "../utils/use-dashboard-cta";
 import {
   ClaudeCodeLogo,
@@ -15,7 +15,6 @@ import {
   GeminiCliLogo,
   OpenClawLogo,
   OpenCodeLogo,
-  heroButtonClassName,
 } from "./shared";
 
 export function LandingHero() {
@@ -24,10 +23,7 @@ export function LandingHero() {
   const ctaHref = useDashboardCtaHref();
 
   return (
-    <div
-      className="relative min-h-full overflow-hidden text-white"
-      style={{ backgroundColor: landingBrand.colors.heroBg }}
-    >
+    <div className="relative min-h-full overflow-hidden text-white">
       <LandingBackdrop />
 
       <main className="relative z-10">
@@ -36,37 +32,48 @@ export function LandingHero() {
           className="mx-auto max-w-[1320px] px-4 pb-16 pt-28 sm:px-6 sm:pt-32 lg:px-8 lg:pb-24 lg:pt-36"
         >
           <div className="mx-auto max-w-[1120px] text-center">
-            <p className={cn(brutalist.label, "text-[var(--landing-orange)]")}>
+            <span
+              className={cn(
+                neo.label,
+                "inline-flex rounded-full border-2 border-white/30 bg-white/10 px-4 py-1.5 text-white/90 backdrop-blur-sm",
+              )}
+            >
               Província Labs × Multica
-            </p>
+            </span>
             <h1
               className={cn(
-                brutalist.headingOnDark,
-                "mt-4 text-[3rem] sm:text-[4.2rem] lg:text-[5.5rem]",
+                neo.headingOnDark,
+                "mt-6 text-[3rem] sm:text-[4rem] lg:text-[5.25rem]",
               )}
             >
               {t.hero.headlineLine1}
               <br />
-              <span className="text-[var(--landing-orange)]">
+              <span className="text-[var(--landing-coral)]">
                 {t.hero.headlineLine2}
               </span>
             </h1>
 
             <p
               className={cn(
-                brutalist.bodyOnDark,
-                "mx-auto mt-7 max-w-[820px] border-[3px] border-white/25 bg-white/5 px-6 py-5 text-left sm:text-center",
+                neo.bodyOnDark,
+                "mx-auto mt-7 max-w-[820px] rounded-2xl border-2 border-white/25 bg-[var(--landing-ink)]/45 px-6 py-5 backdrop-blur-md",
               )}
             >
               {t.hero.subheading}
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link href={ctaHref} className={heroButtonClassName("solid")}>
+              <Link
+                href={ctaHref}
+                className={neoButtonClassName("coral")}
+              >
                 {user ? t.header.dashboard : t.hero.cta}
               </Link>
               {landingBrand.showDownloadDesktop ? (
-                <Link href="/download" className={heroButtonClassName("ghost")}>
+                <Link
+                  href="/download"
+                  className={neoButtonClassName("ghostOnDark")}
+                >
                   <Download className="size-4" aria-hidden />
                   {t.hero.downloadDesktop}
                 </Link>
@@ -74,7 +81,7 @@ export function LandingHero() {
               {landingBrand.showTalkToSales ? (
                 <Link
                   href="/contact-sales"
-                  className="group inline-flex items-center justify-center gap-1.5 px-3 py-3 text-[13px] font-black uppercase tracking-[0.08em] text-white/80 transition-colors hover:text-[var(--landing-orange)]"
+                  className="group inline-flex items-center justify-center gap-1.5 rounded-xl px-3 py-3 text-[14px] font-semibold text-white/85 transition-colors hover:text-[var(--landing-mint)]"
                 >
                   {t.hero.talkToSales}
                   <ArrowRight
@@ -88,7 +95,7 @@ export function LandingHero() {
 
           {landingBrand.showAgentPartners ? (
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
-              <span className="text-[12px] font-black uppercase tracking-[0.16em] text-white/60">
+              <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-white/70">
                 {t.hero.worksWith}
               </span>
               <div className="flex flex-wrap items-center justify-center gap-2">
@@ -102,14 +109,12 @@ export function LandingHero() {
                   <div
                     key={name}
                     className={cn(
-                      "flex items-center gap-2 border-2 border-white/30 bg-white/5 px-3 py-2 text-white",
-                      brutalist.shadowOrange,
+                      "flex items-center gap-2 rounded-xl border-2 border-white/30 bg-white/90 px-3 py-2 text-[var(--landing-ink)]",
+                      neo.shadowMint,
                     )}
                   >
                     <Logo className="size-4" />
-                    <span className="text-[12px] font-bold uppercase tracking-wide">
-                      {name}
-                    </span>
+                    <span className="text-[12px] font-semibold">{name}</span>
                   </div>
                 ))}
               </div>
@@ -132,29 +137,27 @@ function LandingBackdrop() {
         src={landingBrand.images.heroBackground}
         alt=""
         fill
-        className="object-cover object-center opacity-35 mix-blend-luminosity"
+        priority
+        className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-[var(--landing-blue)]/88" />
-      <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,107,0,0.06)_0px,rgba(255,107,0,0.06)_1px,transparent_1px,transparent_48px),repeating-linear-gradient(90deg,rgba(255,107,0,0.04)_0px,rgba(255,107,0,0.04)_1px,transparent_1px,transparent_48px)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--landing-ink)]/55 via-[var(--landing-ink)]/35 to-[var(--landing-blue)]/75" />
     </div>
   );
 }
 
 function ProductImage({ alt }: { alt: string }) {
   return (
-    <div className={cn(brutalist.border, brutalist.shadow, "bg-white")}>
-      <div className="relative overflow-hidden">
-        <Image
-          src={landingBrand.images.heroProduct}
-          alt={alt}
-          width={3532}
-          height={2382}
-          priority
-          className="block h-auto w-full"
-          sizes="(max-width: 1320px) 100vw, 1320px"
-          quality={85}
-        />
-      </div>
+    <div className={cn(neo.card, neo.shadowViolet, "overflow-hidden")}>
+      <Image
+        src={landingBrand.images.heroProduct}
+        alt={alt}
+        width={3532}
+        height={2382}
+        priority
+        className="block h-auto w-full"
+        sizes="(max-width: 1320px) 100vw, 1320px"
+        quality={85}
+      />
     </div>
   );
 }

@@ -19,7 +19,7 @@ import {
   UserMinus,
 } from "lucide-react";
 import { cn } from "@multica/ui/lib/utils";
-import { brutalist } from "../brutalist-styles";
+import { neo } from "../brutalist-styles";
 import { ImageIcon } from "./shared";
 import { useLocale } from "../i18n";
 import type { LandingDict } from "../i18n";
@@ -1007,8 +1007,8 @@ export function FeaturesSection() {
     <section
       id="features"
       className={cn(
-        brutalist.sectionLight,
-        "border-y-[3px] border-[var(--landing-ink)]",
+        neo.sectionLight,
+        "border-y-2 border-[var(--landing-ink)]",
       )}
     >
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
@@ -1022,17 +1022,17 @@ export function FeaturesSection() {
                   key={f.label}
                   onClick={() => scrollToPanel(i)}
                   className={cn(
-                    "group flex items-center gap-3 px-4 py-3 text-left text-[11px] font-black uppercase tracking-[0.14em] transition-colors",
+                    "group flex items-center gap-3 rounded-xl px-4 py-3 text-left text-[11px] font-bold uppercase tracking-[0.12em] transition-colors",
                     i === activeIndex
                       ? "text-[var(--landing-blue)]"
-                      : "text-[var(--landing-ink)]/35 hover:text-[var(--landing-orange)]",
+                      : "text-[var(--landing-ink)]/35 hover:text-[var(--landing-blue)]",
                   )}
                 >
                   <span
                     className={cn(
-                      "size-3 shrink-0 border-2 border-[var(--landing-ink)] transition-colors",
+                      "size-3 shrink-0 rounded-md border-2 border-[var(--landing-ink)] transition-colors",
                       i === activeIndex
-                        ? "bg-[var(--landing-orange)]"
+                        ? "bg-[var(--landing-coral)]"
                         : "bg-transparent",
                     )}
                   />
@@ -1054,12 +1054,12 @@ export function FeaturesSection() {
                 className={cn(
                   "py-20 lg:py-28",
                   i < features.length - 1 &&
-                    "border-b-[3px] border-[var(--landing-ink)]",
+                    "border-b-2 border-[var(--landing-ink)]",
                 )}
               >
                 <h2
                   className={cn(
-                    brutalist.heading,
+                    neo.heading,
                     "text-[2.2rem] sm:text-[3rem] lg:text-[3.6rem]",
                   )}
                 >
@@ -1075,8 +1075,8 @@ export function FeaturesSection() {
                     <div
                       className={cn(
                         "relative overflow-hidden",
-                        brutalist.border,
-                        brutalist.shadow,
+                        neo.border,
+                        neo.shadowBlue,
                       )}
                     >
                       <Image
@@ -1094,14 +1094,14 @@ export function FeaturesSection() {
                   ) : (
                     <div
                       className={cn(
-                        "relative overflow-hidden border-[3px] border-[var(--landing-ink)] bg-[var(--landing-blue-light)]",
-                        brutalist.shadow,
+                        "relative overflow-hidden rounded-2xl border-2 border-[var(--landing-ink)] bg-[var(--landing-sky)]",
+                        neo.shadowMint,
                       )}
                     >
                       <div className="aspect-[16/9] w-full" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="flex flex-col items-center gap-4 text-center">
-                          <div className="grid size-14 place-items-center border-[3px] border-[var(--landing-ink)] bg-white">
+                          <div className="grid size-14 place-items-center rounded-xl border-2 border-[var(--landing-ink)] bg-white">
                             <ImageIcon className="size-6 text-[var(--landing-ink)]/30" />
                           </div>
                           <p className="text-[12px] font-black uppercase tracking-wider text-[var(--landing-ink)]/40">
@@ -1117,7 +1117,7 @@ export function FeaturesSection() {
                 <div className="mt-14 grid gap-8 sm:mt-18 md:grid-cols-3 md:gap-10">
                   {feature.cards.map((card) => (
                     <div key={card.title}>
-                      <h3 className="border-l-4 border-[var(--landing-orange)] pl-3 text-[15px] font-black uppercase leading-snug tracking-tight sm:text-[16px]">
+                      <h3 className="border-l-4 border-[var(--landing-coral)] pl-3 text-[15px] font-bold leading-snug sm:text-[16px]">
                         {card.title}
                       </h3>
                       <p className="mt-2.5 text-[14px] leading-[1.7] text-[var(--landing-ink)]/60 sm:text-[15px]">
