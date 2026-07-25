@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { cn } from "@multica/ui/lib/utils";
 import { useAuthStore } from "@multica/core/auth";
-import { docsHrefForLocale, useLocale } from "../i18n";
+import { useLocale } from "../i18n";
 import { landingBrand } from "../branding";
 import { neo, neoButtonClassName } from "../brutalist-styles";
 import { useDashboardCtaHref } from "../utils/use-dashboard-cta";
 import { GitHubMark, githubUrl } from "./shared";
 
 export function HowItWorksSection() {
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
   const user = useAuthStore((s) => s.user);
   const ctaHref = useDashboardCtaHref();
 
@@ -63,12 +63,6 @@ export function HowItWorksSection() {
         <div className="mt-14 flex flex-wrap items-center gap-4">
           <Link href={ctaHref} className={neoButtonClassName("primary")}>
             {user ? t.header.dashboard : t.howItWorks.cta}
-          </Link>
-          <Link
-            href={docsHrefForLocale(locale)}
-            className={neoButtonClassName("ghost")}
-          >
-            {t.howItWorks.ctaDocs}
           </Link>
           {landingBrand.links.github ? (
             <Link
