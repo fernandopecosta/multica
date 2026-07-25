@@ -39,10 +39,7 @@ export function LandingFooter() {
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-12 border-b border-white/15 py-16 sm:py-20 lg:flex-row lg:gap-20">
           <div className="lg:w-[340px] lg:shrink-0">
-            <Link href="#product" className="flex items-center gap-3">
-              <LandingLogo variant="dark" size="footer" />
-            </Link>
-            <p className="mt-4 max-w-[300px] rounded-xl border-2 border-white/20 bg-white/10 px-4 py-3 text-[14px] leading-[1.7] text-white/85 sm:text-[15px]">
+            <p className="max-w-[300px] rounded-xl border-2 border-white/20 bg-white/10 px-4 py-3 text-[14px] leading-[1.7] text-white/85 sm:text-[15px]">
               {t.footer.tagline}
             </p>
             <div className="mt-4 flex items-center gap-3">
