@@ -16,6 +16,20 @@
     color-scheme: light;
 }
 .landing-light {
+    --landing-blue: #2563eb;
+    --landing-blue-dark: #1d4ed8;
+    --landing-sky: #e0f2fe;
+    --landing-coral: #fb7185;
+    --landing-coral-dark: #f43f5e;
+    --landing-mint: #2dd4bf;
+    --landing-mint-soft: #ccfbf1;
+    --landing-violet: #8b5cf6;
+    --landing-violet-soft: #ede9fe;
+    --landing-ink: #0f172a;
+    --landing-paper: #f8fafc;
+    --font-landing-body: var(--font-landing-sans), "Segoe UI", system-ui, sans-serif;
+    --font-landing-heading: var(--font-landing-display), var(--font-landing-sans),
+        "Segoe UI", system-ui, sans-serif;
     --app-shell: oklch(0.964435 0.001327 286.375);
     --page-canvas: oklch(0.988087 0 0);
     --surface: oklch(1 0 0);
@@ -54,4 +68,12 @@
     --scrollbar-thumb: oklch(0 0 0 / 10%);
     --scrollbar-thumb-hover: oklch(0 0 0 / 18%);
     --scrollbar-track: transparent;
+}
+
+.landing-light h1,
+.landing-light h2,
+.landing-light h3,
+.landing-light .landing-display {
+    font-family: var(--font-landing-heading);
+    letter-spacing: -0.03em;
 }

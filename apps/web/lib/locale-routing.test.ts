@@ -7,6 +7,7 @@ import {
 describe("locale routing", () => {
   it("accepts only app-supported locale identifiers", () => {
     expect(isSupportedLocale("en")).toBe(true);
+    expect(isSupportedLocale("pt-BR")).toBe(true);
     expect(isSupportedLocale("zh-Hans")).toBe(true);
     expect(isSupportedLocale("ko")).toBe(true);
     expect(isSupportedLocale("ja")).toBe(true);

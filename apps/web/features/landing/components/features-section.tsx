@@ -19,6 +19,7 @@ import {
   UserMinus,
 } from "lucide-react";
 import { cn } from "@multica/ui/lib/utils";
+import { neo } from "../brutalist-styles";
 import { ImageIcon } from "./shared";
 import { useLocale } from "../i18n";
 import type { LandingDict } from "../i18n";
@@ -1003,7 +1004,13 @@ export function FeaturesSection() {
   };
 
   return (
-    <section id="features" className="bg-white text-[#0a0d12]">
+    <section
+      id="features"
+      className={cn(
+        neo.sectionLight,
+        "border-y-2 border-[var(--landing-ink)]",
+      )}
+    >
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <div className="relative lg:flex lg:gap-20">
           {/* Sticky left nav */}
@@ -1015,16 +1022,18 @@ export function FeaturesSection() {
                   key={f.label}
                   onClick={() => scrollToPanel(i)}
                   className={cn(
-                    "group flex items-center gap-3 rounded-lg px-4 py-3 text-left text-[11px] font-semibold tracking-[0.12em] transition-colors",
+                    "group flex items-center gap-3 rounded-xl px-4 py-3 text-left text-[11px] font-bold uppercase tracking-[0.12em] transition-colors",
                     i === activeIndex
-                      ? "text-[#0a0d12]"
-                      : "text-[#0a0d12]/36 hover:text-[#0a0d12]/60",
+                      ? "text-[var(--landing-blue)]"
+                      : "text-[var(--landing-ink)]/35 hover:text-[var(--landing-blue)]",
                   )}
                 >
                   <span
                     className={cn(
-                      "size-2 shrink-0 rounded-full transition-colors",
-                      i === activeIndex ? "bg-[#0a0d12]" : "bg-transparent",
+                      "size-3 shrink-0 rounded-md border-2 border-[var(--landing-ink)] transition-colors",
+                      i === activeIndex
+                        ? "bg-[var(--landing-coral)]"
+                        : "bg-transparent",
                     )}
                   />
                   {f.label}
@@ -1044,21 +1053,32 @@ export function FeaturesSection() {
                 data-index={i}
                 className={cn(
                   "py-20 lg:py-28",
-                  i < features.length - 1 && "border-b border-[#0a0d12]/8",
+                  i < features.length - 1 &&
+                    "border-b-2 border-[var(--landing-ink)]",
                 )}
               >
-                {/* Title + description */}
-                <h2 className="font-[family-name:var(--font-serif)] text-[2.6rem] leading-[1.05] tracking-[-0.03em] text-[#0a0d12] sm:text-[3.4rem] lg:text-[4.2rem]">
+                <h2
+                  className={cn(
+                    neo.heading,
+                    "text-[2.2rem] sm:text-[3rem] lg:text-[3.6rem]",
+                  )}
+                >
                   {feature.title}
                 </h2>
-                <p className="mt-5 max-w-[640px] text-[15px] leading-7 text-[#0a0d12]/60 sm:text-[16px]">
+                <p className="mt-5 max-w-[640px] text-[15px] leading-7 text-[var(--landing-ink)]/65 sm:text-[16px]">
                   {feature.description}
                 </p>
 
                 {/* Visual */}
                 <div className="mt-14 sm:mt-18">
                   {feature.visual ? (
-                    <div className="relative overflow-hidden rounded-sm">
+                    <div
+                      className={cn(
+                        "relative overflow-hidden",
+                        neo.border,
+                        neo.shadowBlue,
+                      )}
+                    >
                       <Image
                         src={feature.bgImage ?? "/images/feature-bg.jpg"}
                         alt=""
@@ -1072,14 +1092,19 @@ export function FeaturesSection() {
                       </div>
                     </div>
                   ) : (
-                    <div className="relative overflow-hidden border border-[#0a0d12]/8 bg-[#f5f5f5]">
+                    <div
+                      className={cn(
+                        "relative overflow-hidden rounded-2xl border-2 border-[var(--landing-ink)] bg-[var(--landing-sky)]",
+                        neo.shadowMint,
+                      )}
+                    >
                       <div className="aspect-[16/9] w-full" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="flex flex-col items-center gap-4 text-center">
-                          <div className="grid size-14 place-items-center rounded-2xl border border-[#0a0d12]/8 bg-white shadow-sm">
-                            <ImageIcon className="size-6 text-[#0a0d12]/30" />
+                          <div className="grid size-14 place-items-center rounded-xl border-2 border-[var(--landing-ink)] bg-white">
+                            <ImageIcon className="size-6 text-[var(--landing-ink)]/30" />
                           </div>
-                          <p className="text-[13px] text-[#0a0d12]/36">
+                          <p className="text-[12px] font-black uppercase tracking-wider text-[var(--landing-ink)]/40">
                             {feature.label.toLowerCase()} visual
                           </p>
                         </div>
@@ -1092,10 +1117,10 @@ export function FeaturesSection() {
                 <div className="mt-14 grid gap-8 sm:mt-18 md:grid-cols-3 md:gap-10">
                   {feature.cards.map((card) => (
                     <div key={card.title}>
-                      <h3 className="text-[15px] font-semibold leading-snug text-[#0a0d12] sm:text-[16px]">
+                      <h3 className="border-l-4 border-[var(--landing-coral)] pl-3 text-[15px] font-bold leading-snug sm:text-[16px]">
                         {card.title}
                       </h3>
-                      <p className="mt-2.5 text-[14px] leading-[1.7] text-[#0a0d12]/56 sm:text-[15px]">
+                      <p className="mt-2.5 text-[14px] leading-[1.7] text-[var(--landing-ink)]/60 sm:text-[15px]">
                         {card.description}
                       </p>
                     </div>

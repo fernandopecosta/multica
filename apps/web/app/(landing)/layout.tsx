@@ -1,17 +1,18 @@
-import { Instrument_Serif, Noto_Serif_SC } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import { LocaleProvider } from "@/features/landing/i18n";
 import { getRequestLocale } from "@/lib/request-locale";
+import { landingBrand } from "@/features/landing/branding";
 
-const instrumentSerif = Instrument_Serif({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-serif",
+  variable: "--font-landing-sans",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const notoSerifSC = Noto_Serif_SC({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-serif-zh",
+  variable: "--font-landing-display",
+  weight: ["500", "600", "700"],
 });
 
 const jsonLd = {
@@ -19,21 +20,20 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      name: "Multica",
-      url: "https://www.multica.ai",
-      sameAs: ["https://github.com/multica-ai/multica"],
+      name: landingBrand.name,
+      url: landingBrand.websiteUrl,
     },
     {
       "@type": "SoftwareApplication",
-      name: "Multica",
+      name: landingBrand.name,
       applicationCategory: "ProjectManagement",
       operatingSystem: "Web",
       description:
-        "Open-source project management platform that turns coding agents into real teammates.",
+        "Plataforma de gestão de projetos para equipes humanas e agentes de IA.",
       offers: {
         "@type": "Offer",
         price: "0",
-        priceCurrency: "USD",
+        priceCurrency: "BRL",
       },
     },
   ],
@@ -52,7 +52,9 @@ export default async function LandingLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className={`${instrumentSerif.variable} ${notoSerifSC.variable} landing-light h-full overflow-x-hidden overflow-y-auto bg-white`}>
+      <div
+        className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} landing-light h-full overflow-x-hidden overflow-y-auto bg-[var(--landing-paper)] font-[family-name:var(--font-landing-sans)]`}
+      >
         <LocaleProvider initialLocale={initialLocale}>{children}</LocaleProvider>
       </div>
     </>

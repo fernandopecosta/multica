@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { MulticaLanding } from "@/features/landing/components/multica-landing";
+import { landingBrand } from "@/features/landing/branding";
 
 export const metadata: Metadata = {
   title: "Homepage",
   description:
-    "Multica — open-source platform that turns coding agents into real teammates. Assign tasks, track progress, compound skills.",
+    "Província Labs — plataforma para transformar agentes de código em colegas de equipe.",
   openGraph: {
-    title: "Multica — Project Management for Human + Agent Teams",
+    title: `${landingBrand.name} — Gestão de Projetos para Equipes Humanas + Agentes`,
     description:
-      "Manage your human + agent workforce in one place.",
+      "Gerencie sua força de trabalho humana + agentes em um só lugar.",
     url: "/homepage",
   },
   alternates: {

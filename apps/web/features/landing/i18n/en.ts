@@ -19,12 +19,13 @@ export function createEnDict(allowSignup: boolean): LandingDict {
     headlineLine1: "Your next 10 hires",
     headlineLine2: "won\u2019t be human.",
     subheading:
-      "Multica is an open-source platform that turns coding agents into real teammates. Assign tasks, track progress, compound skills \u2014 manage your human + agent workforce in one place.",
-    cta: "Start free trial",
+      "Prov\u00edncia Labs runs a fork of Multica \u2014 an open-source platform that turns coding agents into real teammates. Assign tasks, track progress, compound skills \u2014 manage your human + agent workforce in one place.",
+    cta: "Get started",
     downloadDesktop: "Download Desktop",
     talkToSales: "Talk to sales",
     worksWith: "Works with",
-    imageAlt: "Multica board view \u2014 issues managed by humans and agents",
+    imageAlt:
+      "Prov\u00edncia Labs board view \u2014 issues managed by humans and agents",
   },
 
   features: {
@@ -225,7 +226,7 @@ export function createEnDict(allowSignup: boolean): LandingDict {
 
   footer: {
     tagline:
-      "Project management for human + agent teams. Open source, self-hostable, built for the future of work.",
+      "Project management for human + agent teams. A Multica fork used internally by Prov\u00edncia Labs.",
     cta: "Get started",
     groups: {
       product: {
@@ -233,31 +234,20 @@ export function createEnDict(allowSignup: boolean): LandingDict {
         links: [
           { label: "Features", href: "#features" },
           { label: "How it Works", href: "#how-it-works" },
-          { label: "Use cases", href: "/usecases" },
-          { label: "Changelog", href: "/changelog" },
-          { label: "Download", href: "/download" },
         ],
       },
       resources: {
         label: "Resources",
-        links: [
-          { label: "Documentation", href: "/docs" },
-          { label: "API", href: githubUrl },
-          { label: "X (Twitter)", href: "https://x.com/MulticaAI" },
-          { label: "Discord", href: discordUrl },
-        ],
+        links: [{ label: "Documentation", href: "/docs" }],
       },
       company: {
         label: "Company",
         links: [
-          { label: "About", href: "/about" },
-          { label: "Open Source", href: "#open-source" },
-          { label: "Contact Sales", href: "/contact-sales" },
-          { label: "GitHub", href: githubUrl },
+          { label: "Prov\u00edncia Labs", href: "https://provincialabs.com.br" },
         ],
       },
     },
-    copyright: "\u00a9 {year} Multica. All rights reserved.",
+    copyright: "\u00a9 {year} Prov\u00edncia Labs. All rights reserved.",
   },
 
   about: {

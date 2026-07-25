@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { MulticaIcon } from "@multica/ui/components/common/multica-icon";
 import { cn } from "@multica/ui/lib/utils";
 import { useAuthStore } from "@multica/core/auth";
 import {
@@ -12,7 +11,9 @@ import {
   twitterUrl,
   discordUrl,
 } from "./shared";
-import { useLocale, locales, localeLabels } from "../i18n";
+import { useLocale, localeLabels } from "../i18n";
+import { landingBrand } from "../branding";
+import { neo, neoButtonClassName } from "../brutalist-styles";
 import { useDashboardCtaHref } from "../utils/use-dashboard-cta";
 
 export function LandingFooter() {
@@ -20,65 +21,70 @@ export function LandingFooter() {
   const user = useAuthStore((s) => s.user);
   const ctaHref = useDashboardCtaHref();
   const groups = Object.values(t.footer.groups);
+  const visibleLocales = landingBrand.landingLocales;
 
   return (
-    <footer className="bg-[#0a0d12] text-white">
+    <footer
+      className={cn(
+        neo.sectionBlue,
+        "border-t-2 border-[var(--landing-ink)] text-white",
+      )}
+    >
+      <div className="flex h-1.5">
+        <div className="flex-1 bg-[var(--landing-coral)]" aria-hidden />
+        <div className="flex-1 bg-[var(--landing-mint)]" aria-hidden />
+        <div className="flex-1 bg-[var(--landing-violet)]" aria-hidden />
+      </div>
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
-        {/* Top: CTA + link columns */}
-        <div className="flex flex-col gap-12 border-b border-white/10 py-16 sm:py-20 lg:flex-row lg:gap-20">
-          {/* Left — newsletter / CTA */}
+        <div className="flex flex-col gap-12 border-b border-white/15 py-16 sm:py-20 lg:flex-row lg:gap-20">
           <div className="lg:w-[340px] lg:shrink-0">
-            <Link href="#product" className="flex items-center gap-3">
-              <MulticaIcon className="size-5 text-white" noSpin />
-              <span className="text-[18px] font-semibold tracking-[0.04em] lowercase">
-                multica
-              </span>
-            </Link>
-            <p className="mt-4 max-w-[300px] text-[14px] leading-[1.7] text-white/50 sm:text-[15px]">
+            <p className="max-w-[300px] rounded-xl border-2 border-white/20 bg-white/10 px-4 py-3 text-[14px] leading-[1.7] text-white/85 sm:text-[15px]">
               {t.footer.tagline}
             </p>
             <div className="mt-4 flex items-center gap-3">
-              <Link
-                href={twitterUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-white/40 transition-colors hover:text-white"
-              >
-                <XMark className="size-4" />
-              </Link>
-              <Link
-                href={githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-white/40 transition-colors hover:text-white"
-              >
-                <GitHubMark className="size-4" />
-              </Link>
-              <Link
-                href={discordUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Discord"
-                className="text-white/40 transition-colors hover:text-white"
-              >
-                <DiscordMark className="size-4" />
-              </Link>
+              {landingBrand.links.twitter ? (
+                <Link
+                  href={twitterUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white/50 transition-colors hover:text-[var(--landing-coral)]"
+                >
+                  <XMark className="size-4" />
+                </Link>
+              ) : null}
+              {landingBrand.links.github ? (
+                <Link
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white/50 transition-colors hover:text-[var(--landing-mint)]"
+                >
+                  <GitHubMark className="size-4" />
+                </Link>
+              ) : null}
+              {landingBrand.links.discord ? (
+                <Link
+                  href={discordUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Discord"
+                  className="text-white/50 transition-colors hover:text-[var(--landing-violet-soft)]"
+                >
+                  <DiscordMark className="size-4" />
+                </Link>
+              ) : null}
             </div>
             <div className="mt-6">
-              <Link
-                href={ctaHref}
-                className="inline-flex items-center justify-center rounded-[11px] bg-white px-5 py-2.5 text-[13px] font-semibold text-[#0a0d12] transition-colors hover:bg-white/88"
-              >
+              <Link href={ctaHref} className={neoButtonClassName("coral")}>
                 {user ? t.header.dashboard : t.footer.cta}
               </Link>
             </div>
           </div>
 
-          {/* Right — link columns */}
           <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-4">
             {groups.map((group) => (
               <div key={group.label}>
-                <h4 className="text-[12px] font-semibold uppercase tracking-[0.1em] text-white/40">
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--landing-mint)]">
                   {group.label}
                 </h4>
                 <ul className="mt-4 flex flex-col gap-2.5">
@@ -89,7 +95,7 @@ export function LandingFooter() {
                         {...(link.href.startsWith("http")
                           ? { target: "_blank", rel: "noreferrer" }
                           : {})}
-                        className="text-[14px] text-white/50 transition-colors hover:text-white"
+                        className="text-[14px] text-white/65 transition-colors hover:text-white"
                       >
                         {link.label}
                       </Link>
@@ -101,44 +107,29 @@ export function LandingFooter() {
           </div>
         </div>
 
-        {/* Bottom: copyright + language switcher */}
         <div className="flex items-center justify-between py-6">
-          <p className="text-[13px] text-white/36">
+          <p className="text-[12px] font-medium text-white/50">
             {t.footer.copyright.replace(
               "{year}",
               String(new Date().getFullYear()),
             )}
           </p>
-          <div className="flex items-center">
-            {locales.map((l, i) => (
+          <div className="flex overflow-hidden rounded-xl border-2 border-white/25">
+            {visibleLocales.map((l) => (
               <button
                 type="button"
                 key={l}
                 onClick={() => setLocale(l)}
                 className={cn(
-                  "px-1.5 py-1 text-[12px] font-medium transition-colors",
+                  "px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider transition-colors",
                   l === locale
-                    ? "text-white/70"
-                    : "text-white/30 hover:text-white/50",
-                  i > 0 && "border-l border-white/16",
+                    ? "bg-[var(--landing-coral)] text-[var(--landing-ink)]"
+                    : "text-white/55 hover:bg-white/10 hover:text-white",
                 )}
               >
                 {localeLabels[l]}
               </button>
             ))}
-          </div>
-        </div>
-
-        {/* Giant logo */}
-        <div className="relative overflow-hidden pb-4">
-          <div className="flex items-end gap-6 sm:gap-8">
-            <MulticaIcon
-              className="size-[clamp(4rem,12vw,10rem)] shrink-0 text-white"
-              noSpin
-            />
-            <span className="font-[family-name:var(--font-serif)] text-[clamp(6rem,22vw,16rem)] font-normal leading-[0.82] tracking-[-0.04em] text-white lowercase">
-              multica
-            </span>
           </div>
         </div>
       </div>

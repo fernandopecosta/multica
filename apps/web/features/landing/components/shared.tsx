@@ -1,8 +1,12 @@
-import { cn } from "@multica/ui/lib/utils";
+import { brutalistButtonClassName } from "../brutalist-styles";
+import { landingBrand } from "../branding";
 
-export const githubUrl = "https://github.com/multica-ai/multica";
-export const twitterUrl = "https://x.com/MulticaAI";
-export const discordUrl = "https://discord.gg/W8gYBn226t";
+export const githubUrl =
+  landingBrand.links.github ?? "https://github.com/multica-ai/multica";
+export const twitterUrl =
+  landingBrand.links.twitter ?? "https://x.com/MulticaAI";
+export const discordUrl =
+  landingBrand.links.discord ?? "https://discord.gg/W8gYBn226t";
 
 export function GitHubMark({ className }: { className?: string }) {
   return (
@@ -181,23 +185,15 @@ export function headerButtonClassName(
   tone: "ghost" | "solid",
   variant: "dark" | "light" = "dark",
 ) {
-  return cn(
-    "inline-flex items-center justify-center gap-2 rounded-[11px] px-4 py-2.5 text-[13px] font-semibold transition-colors",
-    variant === "dark"
-      ? tone === "solid"
-        ? "bg-white text-[#0a0d12] hover:bg-white/92"
-        : "border border-white/18 bg-black/16 text-white backdrop-blur-sm hover:bg-black/24"
-      : tone === "solid"
-        ? "bg-[#0a0d12] text-white hover:bg-[#0a0d12]/88"
-        : "border border-[#0a0d12]/12 bg-white text-[#0a0d12] hover:bg-[#0a0d12]/5",
+  void variant;
+  return brutalistButtonClassName(
+    tone === "solid" ? "orange" : "ghost",
+    { onDark: true },
   );
 }
 
 export function heroButtonClassName(tone: "ghost" | "solid") {
-  return cn(
-    "inline-flex items-center justify-center gap-2 rounded-[12px] px-5 py-3 text-[14px] font-semibold transition-colors",
-    tone === "solid"
-      ? "bg-white text-[#0a0d12] hover:bg-white/92"
-      : "border border-white/18 bg-black/16 text-white backdrop-blur-sm hover:bg-black/24",
-  );
+  return brutalistButtonClassName(tone === "solid" ? "orange" : "ghost", {
+    onDark: true,
+  });
 }

@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { MulticaLanding } from "@/features/landing/components/multica-landing";
 import { RedirectIfAuthenticated } from "@/features/landing/components/redirect-if-authenticated";
+import { landingBrand } from "@/features/landing/branding";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Multica — Project Management for Human + Agent Teams",
+    absolute: `${landingBrand.name} — Gestão de Projetos para Equipes Humanas + Agentes`,
   },
   description:
-    "Open-source platform that turns coding agents into real teammates. Assign tasks, track progress, compound skills.",
+    "Plataforma interna da Província Labs para transformar agentes de código em colegas de equipe. Atribua tarefas, acompanhe progresso e gerencie skills.",
   openGraph: {
-    title: "Multica — Project Management for Human + Agent Teams",
+    title: `${landingBrand.name} — Gestão de Projetos para Equipes Humanas + Agentes`,
     description:
-      "Manage your human + agent workforce in one place.",
+      "Gerencie sua força de trabalho humana + agentes em um só lugar.",
     url: "/",
   },
   alternates: {

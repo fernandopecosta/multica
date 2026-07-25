@@ -32,6 +32,7 @@ type ContentLang = "en" | "zh" | "ko" | "ja";
 
 const CONTENT_LANG_BY_LOCALE: Record<SupportedLocale, ContentLang> = {
   en: "en",
+  "pt-BR": "en",
   "zh-Hans": "zh",
   ko: "ko",
   ja: "ja",
