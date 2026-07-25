@@ -2,6 +2,9 @@ import Image from "next/image";
 import { cn } from "@multica/ui/lib/utils";
 import { landingBrand } from "../branding";
 
+/** Official logo aspect ratio (834×343). */
+const LOGO_ASPECT = 834 / 343;
+
 export function LandingLogo({
   className,
   wordmarkClassName,
@@ -15,12 +18,8 @@ export function LandingLogo({
   variant?: "dark" | "light";
   size?: "header" | "footer";
 }) {
-  const heights = {
-    header: 36,
-    footer: 48,
-  };
-  const height = heights[size];
-  const width = size === "footer" ? 220 : 180;
+  const height = size === "footer" ? 56 : 44;
+  const width = Math.round(height * LOGO_ASPECT);
 
   return (
     <>
