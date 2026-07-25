@@ -12,14 +12,14 @@ export const landingBrand = {
   },
 
   colors: {
-    heroBg: "#0f0a1a",
+    heroBg: "#05070b",
     footerBg: "#1a1030",
     surface: "#0a0d12",
-    sectionDark: "#0f0a1a",
+    sectionDark: "#05070b",
   },
 
   images: {
-    heroBackground: "/images/provincia-hero-bg.svg",
+    heroBackground: "/images/landing-bg.jpg",
     heroProduct: "/images/landing-hero.png",
   },
 
