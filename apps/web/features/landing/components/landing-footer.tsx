@@ -15,7 +15,6 @@ import { useLocale, localeLabels } from "../i18n";
 import { landingBrand } from "../branding";
 import { neo, neoButtonClassName } from "../brutalist-styles";
 import { useDashboardCtaHref } from "../utils/use-dashboard-cta";
-import { LandingLogo } from "./landing-logo";
 
 export function LandingFooter() {
   const { t, locale, setLocale } = useLocale();
@@ -132,14 +131,6 @@ export function LandingFooter() {
               </button>
             ))}
           </div>
-        </div>
-
-        <div className="relative overflow-hidden border-t border-white/15 pb-6 pt-6">
-          <LandingLogo
-            variant="dark"
-            size="footer"
-            className="mx-auto opacity-95 sm:mx-0"
-          />
         </div>
       </div>
     </footer>
