@@ -226,7 +226,7 @@ export function createEnDict(allowSignup: boolean): LandingDict {
 
   footer: {
     tagline:
-      "Project management for human + agent teams. Internal platform at Prov\u00edncia Labs.",
+      "Project management for human + agent teams. A Multica fork used internally by Prov\u00edncia Labs.",
     cta: "Get started",
     groups: {
       product: {
