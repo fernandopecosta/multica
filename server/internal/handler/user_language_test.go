@@ -103,6 +103,26 @@ func TestUpdateMeAcceptsJapaneseLanguage(t *testing.T) {
 	}
 }
 
+func TestUpdateMeAcceptsPortugueseLanguage(t *testing.T) {
+	userID := newLanguageTestUser(t, "lang-pt-br@multica.ai")
+
+	w := httptest.NewRecorder()
+	req := newPatchMeRequest(userID, `{"language":"pt-BR"}`)
+	testHandler.UpdateMe(w, req)
+
+	if w.Code != http.StatusOK {
+		t.Fatalf("expected 200, got %d: %s", w.Code, w.Body.String())
+	}
+
+	var resp map[string]any
+	if err := json.Unmarshal(w.Body.Bytes(), &resp); err != nil {
+		t.Fatalf("decode response: %v", err)
+	}
+	if got, _ := resp["language"].(string); got != "pt-BR" {
+		t.Fatalf("expected response language=pt-BR, got %v", resp["language"])
+	}
+}
+
 func TestUpdateMeRejectsUnsupportedLanguage(t *testing.T) {
 	userID := newLanguageTestUser(t, "lang-reject@multica.ai")
 

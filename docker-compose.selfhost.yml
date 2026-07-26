@@ -39,7 +39,14 @@ services:
       retries: 5
 
   backend:
-    image: ${MULTICA_BACKEND_IMAGE:-ghcr.io/multica-ai/multica-backend}:${MULTICA_IMAGE_TAG:-latest}
+    image: multica-backend:dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VERSION: ${VERSION:-dev}
+        COMMIT: ${COMMIT:-unknown}
+        DATE: ${DATE:-unknown}
     depends_on:
       postgres:
         condition: service_healthy
