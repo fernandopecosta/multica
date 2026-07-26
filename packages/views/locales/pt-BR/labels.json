@@ -1,0 +1,10 @@
+{
+  "remove_label": "Remover rótulo {{name}}",
+  "resource_picker": {
+    "empty": "Nenhum rótulo",
+    "add": "Adicionar rótulos",
+    "search": "Buscar rótulos...",
+    "no_labels": "Crie rótulos em Configurações primeiro",
+    "no_results": "Nenhum rótulo correspondente"
+  }
+}

@@ -303,6 +303,41 @@ When the glossary doesn't cover a term, look at:
 
 ---
 
+## 3. pt-BR translation glossary (Província Labs fork)
+
+Brazilian Portuguese locale lives in `packages/views/locales/pt-BR/`. Landing copy is in `apps/web/features/landing/i18n/pt.ts`.
+
+### Core terms
+
+| English | pt-BR |
+| --- | --- |
+| Workspace | **espaço de trabalho** |
+| Issue | **tarefa** |
+| Agent | **agente** |
+| Skill | **skill** (product term) |
+| Project | **projeto** |
+| Autopilot | **autopilot** |
+| Runtime | **runtime** |
+| Inbox | **caixa de entrada** |
+| Settings | **configurações** |
+| Member | **membro** |
+| Label | **label** |
+
+### Keep in English
+
+- Brands: Multica, GitHub, Claude, Codex, Cursor, Slack
+- Acronyms: API, CLI, URL, OAuth, WebSocket
+- Status enums: `backlog`, `todo`, `in_progress`, `in_review`, `done`, `blocked`, `cancelled`
+- Roles: `owner`, `admin`, `member`
+
+### Style
+
+- Direct, professional **pt-BR** (not pt-PT)
+- Preserve `{{variable}}` placeholders and markdown from the English source
+- Use `_one` / `_other` plural forms like English
+
+---
+
 ## Updating this page
 
 If you change a rule here, also:
