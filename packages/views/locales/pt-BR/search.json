@@ -1,0 +1,46 @@
+{
+  "title": "Buscar",
+  "description": "Buscar páginas, tarefas, projetos e membros",
+  "placeholder": "Digite um comando ou busque...",
+  "groups": {
+    "pages": "Páginas",
+    "commands": "Comandos",
+    "members": "Membros",
+    "projects": "Projetos",
+    "issues": "Tarefas",
+    "recent": "Recentes"
+  },
+  "pages": {
+    "inbox": "Caixa de entrada",
+    "my_issues": "Minhas tarefas",
+    "issues": "Tarefas",
+    "projects": "Projetos",
+    "agents": "Agentes",
+    "runtimes": "Runtimes",
+    "skills": "Skills",
+    "settings": "Configurações"
+  },
+  "commands": {
+    "current_theme_aria": "Tema atual",
+    "new_issue": "Nova tarefa",
+    "new_project": "Novo projeto",
+    "copy_issue_link": "Copiar link da tarefa",
+    "copy_identifier": "Copiar identificador ({{identifier}})",
+    "fold_all_comments": "Recolher todos os comentários",
+    "unfold_all_comments": "Expandir todos os comentários",
+    "switch_to_light": "Alternar para tema claro",
+    "switch_to_dark": "Alternar para tema escuro",
+    "use_system_theme": "Usar tema do sistema"
+  },
+  "toast": {
+    "link_copied": "Link copiado",
+    "copied_identifier": "{{identifier}} copiado"
+  },
+  "empty": {
+    "no_results": "Nenhum resultado encontrado.",
+    "type_to_search": "Digite para buscar tarefas e projetos"
+  },
+  "trigger": {
+    "label": "Buscar..."
+  }
+}

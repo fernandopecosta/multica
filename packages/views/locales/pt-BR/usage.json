@@ -1,0 +1,60 @@
+{
+  "title": "Uso",
+  "subtitle": "Gasto de tokens e atividade de agentes neste espaço de trabalho.",
+  "filter": {
+    "project_label": "Projeto",
+    "all_projects": "Todos os projetos",
+    "period_label": "Período"
+  },
+  "kpi": {
+    "cost_label": "Custo · {{days}}D",
+    "tokens_label": "Tokens · {{days}}D",
+    "tokens_hint": "Entrada {{input}} · Saída {{output}}",
+    "run_time_label": "Tempo de execução · {{days}}D",
+    "run_time_hint": "Em {{tasks}} tarefas",
+    "tasks_label": "Tarefas · {{days}}D",
+    "tasks_hint": "{{failed}} com falha"
+  },
+  "dim": {
+    "label": "Dimensão",
+    "daily": "Diário",
+    "weekly": "Semanal"
+  },
+  "daily": {
+    "title_cost": "Custo diário",
+    "title_tokens": "Tokens diários",
+    "title_time": "Tempo de execução diário",
+    "title_tasks": "Tarefas diárias",
+    "metric_cost": "Custo",
+    "metric_tokens": "Tokens",
+    "metric_time": "Tempo",
+    "metric_tasks": "Tarefas",
+    "no_data": "Nenhum uso neste período."
+  },
+  "weekly": {
+    "title_cost": "Custo semanal",
+    "title_tokens": "Tokens semanais",
+    "title_time": "Tempo de execução semanal",
+    "title_tasks": "Tarefas semanais",
+    "partial_label": "{{range}} (parcial · {{covered}} / 7 dias)"
+  },
+  "leaderboard": {
+    "title": "Ranking",
+    "caption": "{{count}} agentes",
+    "caption_with_deleted": "{{count}} agentes · {{deleted}} excluídos",
+    "deleted_agents": "Agentes excluídos",
+    "header_agent": "Agente",
+    "header_tokens": "Tokens",
+    "header_cost": "Custo",
+    "header_time": "Tempo",
+    "header_tasks": "Tarefas",
+    "no_data": "Nenhuma atividade de agente neste período."
+  },
+  "empty": {
+    "title": "Nenhum uso ainda",
+    "body": "Quando os agentes começarem a executar tarefas aqui, o gasto de tokens e o tempo de execução aparecerão nesta visualização."
+  },
+  "duration": {
+    "less_than_minute": "<1m"
+  }
+}

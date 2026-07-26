@@ -54,6 +54,7 @@ export function PreferencesTab() {
   ];
 
   const languageOptions: { value: SupportedLocale; label: string }[] = [
+    { value: "pt-BR", label: t(($) => $.preferences.language.portuguese) },
     { value: "en", label: t(($) => $.preferences.language.english) },
     { value: "zh-Hans", label: t(($) => $.preferences.language.chinese) },
     { value: "ko", label: t(($) => $.preferences.language.korean) },

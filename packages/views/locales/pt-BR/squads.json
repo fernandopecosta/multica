@@ -1,0 +1,103 @@
+{
+  "page": {
+    "title": "Equipes",
+    "new_button": "Nova equipe",
+    "empty_no_squads": "Nenhuma equipe ainda. Crie uma para começar.",
+    "empty_no_match": "Nenhuma equipe corresponde aos seus filtros.",
+    "table": {
+      "name": "Equipe",
+      "leader": "Líder",
+      "members": "Membros",
+      "creator": "Criado por",
+      "created": "Criado"
+    },
+    "no_matches": "Nenhuma equipe corresponde",
+    "row_menu": "Ações da equipe",
+    "archive_action": "Arquivar"
+  },
+  "inspector": {
+    "details_section": "Detalhes",
+    "archive_button": "Arquivar"
+  },
+  "archive_dialog": {
+    "title": "Arquivar esta equipe?",
+    "description": "\"{{name}}\" será arquivada. As tarefas atualmente atribuídas a esta equipe serão transferidas ao líder. Isso não pode ser desfeito — crie uma nova equipe se precisar restaurar o roteamento.",
+    "cancel": "Cancelar",
+    "confirm": "Arquivar",
+    "archiving": "Arquivando…",
+    "success": "Equipe arquivada"
+  },
+  "name_editor": {
+    "cancel": "Cancelar"
+  },
+  "add_member_dialog": {
+    "title": "Adicionar membro",
+    "description": "Adicione um membro do espaço de trabalho ou um agente a esta equipe.",
+    "label_member": "Membro",
+    "label_role": "Função",
+    "label_optional": "(opcional)",
+    "placeholder_role_inline": "Adicionar função…",
+    "cancel": "Cancelar"
+  },
+  "description_dialog": {
+    "title": "Editar descrição",
+    "placeholder_empty": "Adicionar uma descrição",
+    "cancel": "Cancelar"
+  },
+  "discard_changes_dialog": {
+    "title": "Descartar alterações não salvas?",
+    "description": "Você tem alterações não salvas nesta aba. Trocar de aba irá descartá-las.",
+    "keep_editing": "Continuar editando",
+    "discard_button": "Descartar"
+  },
+  "members_tab": {
+    "section_title": "Membros",
+    "section_count_one": "{{count}} membro nesta equipe",
+    "section_count_other": "{{count}} membros nesta equipe",
+    "add_member_button": "Adicionar membro",
+    "create_agent_button": "Criar agente",
+    "leader_chip": "Líder",
+    "view_agent_tooltip": "Abrir detalhes do agente",
+    "make_leader_tooltip": "Tornar líder da equipe",
+    "remove_member_tooltip": "Remover da equipe",
+    "status_working": "Trabalhando",
+    "status_idle": "Ocioso",
+    "status_offline": "Offline",
+    "status_unstable": "Instável",
+    "status_archived": "Arquivado",
+    "issue_status_blocked": "blocked",
+    "active_issue_more": "e mais {{count}}",
+    "last_active_label": "última atividade {{time}}"
+  },
+  "profile_card": {
+    "unavailable": "Equipe indisponível",
+    "detail_link": "Detalhes →",
+    "archived": "Arquivado",
+    "member_count_one": "{{count}} membro",
+    "member_count_other": "{{count}} membros",
+    "members_section": "Membros",
+    "more_members_one": "+{{count}} a mais",
+    "more_members_other": "+{{count}} a mais"
+  },
+  "instructions_tab": {
+    "description": "As instruções da equipe são injetadas no prompt do agente líder sempre que ele trabalha em uma tarefa atribuída a esta equipe. Use-as para orientar o líder com diretrizes da equipe, acordos de trabalho ou contexto que ele deve seguir em cada tarefa.",
+    "unsaved_changes": "Alterações não salvas",
+    "save_button": "Salvar"
+  },
+  "scope": {
+    "mine": "Minhas",
+    "all": "Todas"
+  },
+  "toolbar": {
+    "display": "Exibição",
+    "sort_by": "Ordenar por",
+    "direction_asc": "Crescente",
+    "direction_desc": "Decrescente",
+    "section_columns": "Colunas",
+    "result_count_title": "Equipes correspondentes / todas as equipes",
+    "filter_label": "Filtrar",
+    "filter_active_count_one": "{{count}} filtro",
+    "filter_active_count_other": "{{count}} filtros",
+    "clear_filters": "Limpar filtros"
+  }
+}
