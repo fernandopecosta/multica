@@ -7,8 +7,10 @@ export const landingBrand = {
   metadataBase: "https://app.provincialabs.com.br",
 
   logo: {
-    src: "/images/provincia-labs-logo.png",
+    src: "/images/Provincia-logo-media.png",
     alt: "Província Labs",
+    width: 1386,
+    height: 223,
   },
 
   colors: {
