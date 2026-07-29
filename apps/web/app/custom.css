@@ -53,7 +53,9 @@
     --secondary: oklch(0.967 0.001 286.375);
     --secondary-foreground: oklch(0.21 0.006 285.885);
     --muted: oklch(0.967 0.001 286.375);
-    --muted-foreground: oklch(0.552 0.016 285.938);
+    /* Kept in lockstep with the light value in tokens.css — see the AA
+       reasoning there before changing this number. */
+    --muted-foreground: oklch(0.505 0.016 285.938);
     --accent: oklch(0.967 0.001 286.375);
     --accent-foreground: oklch(0.21 0.006 285.885);
     --destructive: oklch(0.577 0.245 27.325);
@@ -70,6 +72,8 @@
     --scrollbar-track: transparent;
 }
 
+}
+
 .landing-light h1,
 .landing-light h2,
 .landing-light h3,
@@ -77,3 +81,17 @@
     font-family: var(--font-landing-heading);
     letter-spacing: -0.03em;
 }
+
+/* CJK landing headlines: reset Latin-tuned tracking/leading for zh/ja/ko. */
+html[lang|="zh"] .landing-light :is(h1, h2, h3),
+html[lang|="ja"] .landing-light :is(h1, h2, h3),
+html[lang|="ko"] .landing-light :is(h1, h2, h3) {
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+
+html[lang|="ko"] .landing-light :is(h1, h2, h3) {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
