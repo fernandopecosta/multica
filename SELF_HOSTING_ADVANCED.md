@@ -235,9 +235,9 @@ Docs (`FF_DOCS_V1=true`, see [Feature Flags](#feature-flags-optional)) work with
 
 | Variable | Service | Description |
 |----------|---------|-------------|
-| `COLLAB_SECRET` | backend, collab | Shared secret that signs editor tickets and authenticates the backend and collab to each other. Generate with `openssl rand -hex 32`. In `docker-compose.selfhost.yml`, setting it is also what points the backend at the collab service. |
+| `COLLAB_SECRET` | backend, collab | Shared secret that signs editor tickets and authenticates the backend and collab to each other. Generate with `openssl rand -hex 32`. Live editing stays off until this is set. |
 | `COMPOSE_PROFILES` | Compose | Add `collab` to start the collab service (`COMPOSE_PROFILES=collab`). |
-| `COLLAB_INTERNAL_URL` | backend | Where the backend reaches collab. Compose derives `http://collab:8095` from `COLLAB_SECRET`; set it only when collab runs elsewhere. Live editing is off whenever this or `COLLAB_SECRET` is empty. |
+| `COLLAB_INTERNAL_URL` | backend | Where the backend reaches collab. Compose defaults it to `http://collab:8095`; set it only when collab runs elsewhere. Live editing is off whenever this or `COLLAB_SECRET` is empty. |
 | `MULTICA_API_URL` | collab | Where collab reaches the backend to load and store docs. Compose sets `http://backend:8080`. |
 | `MULTICA_CDN_DOMAIN` | collab | Must equal the CDN domain the backend reports, so links to uploaded files become the same nodes the editor makes. That is `CLOUDFRONT_DOMAIN` with S3 storage, and the host of `LOCAL_UPLOAD_BASE_URL` with local uploads (empty when that is unset). Compose fills it from `CLOUDFRONT_DOMAIN`. |
 | `MULTICA_COLLAB_IMAGE` | Compose | Image repository; the tag follows `MULTICA_IMAGE_TAG`. |
