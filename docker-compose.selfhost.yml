@@ -265,10 +265,12 @@ services:
       FF_LOCAL_SEARCH_INDEX:
       FF_DASHBOARD_HISTORY_365D:
       # Live co-editing for Workspace Docs, served by the optional collab
-      # service below. Setting COLLAB_SECRET turns it on and points the API at
-      # that service; enable the service with COMPOSE_PROFILES=collab.
+      # service below. The server leaves it off until COLLAB_SECRET is set;
+      # enable the service with COMPOSE_PROFILES=collab. Keep this URL a plain
+      # default: Coolify's compose parser does not understand ${VAR:+value}
+      # and rejects the deploy, treating the operator as part of the name.
       COLLAB_SECRET: ${COLLAB_SECRET:-}
-      COLLAB_INTERNAL_URL: ${COLLAB_INTERNAL_URL:-${COLLAB_SECRET:+http://collab:8095}}
+      COLLAB_INTERNAL_URL: ${COLLAB_INTERNAL_URL:-http://collab:8095}
     restart: unless-stopped
 
   # Optional: started only with COMPOSE_PROFILES=collab (or --profile collab),
